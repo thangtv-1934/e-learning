@@ -1,0 +1,63 @@
+<%= provide :title, t("home_page.title") %>
+<div class="container-fluid py-3">
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-4 user-summary">
+      <h2 class="p-2 mb-2 bg-primary text-white summary-title rounded"><%= t"home_page.Summary" %></h2>
+      <div class="word-memmories"><%= t "home_page.Words_memorised" %>: 184</div>
+      <div class="list-follower">
+        <h4 class="title text-black my-2"><%= t "home_page.Follower" %></h4>
+        <div class="d-inline-block user-follow-item">
+          <div class="d-flex">
+            <span class="avatar">
+              <img class="rounded-circle mx-2" src="https://via.placeholder.com/20x20">
+            </span>
+            <span class="name">name</span>
+          </div>
+        </div>
+        <div class="d-inline-block user-follow-item">
+          <div class="d-flex">
+            <span class="avatar">
+              <img class="rounded-circle mx-2" src="https://via.placeholder.com/20x20">
+            </span>
+            <span class="name">name</span>
+          </div>
+        </div>
+      </div>
+      <div class="list-followed">
+        <h4 class="title text-black my-2"><%= t "home_page.Followed" %></h4>
+        <div class="d-inline-block user-follow-item">
+          <div class="d-flex">
+            <span class="avatar">
+              <img class="rounded-circle mx-2" src="https://via.placeholder.com/20x20">
+            </span>
+            <span class="name">name</span>
+          </div>
+        </div>
+        <div class="d-inline-block user-follow-item">
+          <div class="d-flex">
+            <span class="avatar">
+              <img class="rounded-circle mx-2" src="https://via.placeholder.com/20x20">
+            </span>
+            <span class="name">name</span>
+          </div>
+        </div>
+      </div>
+      <h2 class="p-2 my-2 bg-primary text-white summary-title rounded"><%= t"home_page.Activities" %></h2>
+    </div>
+    <div class="col-12 col-sm-12 col-md-8 list-courses">
+      <div class="row">
+        <div class="card col-12 col-sm-6 col-md-4 py-2">
+          <img class="card-img-top w-100" src="https://via.placeholder.com/100x100">
+          <div class="card-body p-0">
+            <h5 class="card-title mt-2">Courses</h5>
+            <p class="card-text">Description</p>
+            <div class="d-flex">
+              <%= link_to t("home_page.Word_List"), "/", class: "btn btn-success mx-1 w-50" %>
+              <%= link_to t("home_page.Start_Lesson"), "/", class: "btn btn-success mx-1 w-50" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   namespace :admin do
     get "index"
   end
+  root to: "home#index"
 end
