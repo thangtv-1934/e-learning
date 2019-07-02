@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <%= link_to t("header.title"), root_url, class: "navbar-brand" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><%= t"header.Search" %></button>
+    </form>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+          <img class="img-profile rounded-circle" src="https://via.placeholder.com/40x40">
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">
+            <i class="fa fa-external-link fa-sm fa-fw mr-2 text-black-400"></i>
+            <%= t "header.Admin_panel" %>
+          </a>
+          <a class="dropdown-item" href="#">
+            <i class="fa fa-user fa-sm fa-fw mr-2 text-black-400"></i>
+            <%= t "header.Profile" %>
+          </a>
+          <a class="dropdown-item" href="#">
+            <i class="fa fa-sign-out fa-sm fa-fw mr-2 text-black-400"></i>
+            <%= t "header.Sign_out" %>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

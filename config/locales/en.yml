@@ -9,3 +9,18 @@ en:
       Profile: "Profile"
       Settings: "Settings"
       Activity_Log: "Activity Log"
+  home_page:
+    title: "Home"
+    Words_memorised: "Words memorised"
+    Followed: "Followed"
+    Follower: "Follower"
+    Summary: "Summary"
+    Activities: "Activities"
+    Word_List: "Word list"
+    Start_Lesson: "Start Lesson"
+  header:
+    title: "Home"
+    Search: "Search"
+    Admin_panel: "Admin panel"
+    Profile: "Profile"
+    Sign_out: "Sign out"
