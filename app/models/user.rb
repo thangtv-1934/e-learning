@@ -10,6 +10,8 @@ class User < ApplicationRecord
   has_many :learnings, dependent: :destroy
   has_many :results, dependent: :destroy
 
+  has_one_attached :avatar
+
   class << self
     def new_with_session params, session
       super.tap do |user|
@@ -18,6 +20,7 @@ class User < ApplicationRecord
               session["devise.#{provider}_data"]["extra"]["raw_info"]
             next unless user.email.blank?
             user.email = data["email"]
+            user.
             break
           end
         end

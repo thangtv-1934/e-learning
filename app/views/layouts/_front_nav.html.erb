@@ -13,22 +13,26 @@
     <ul class="navbar-nav ml-auto">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-          <img class="img-profile rounded-circle" src="https://via.placeholder.com/40x40">
+          <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%= current_user.name %></span>
+          <% if current_user.avatar.attached?  %>
+            <%= image_tag current_user.avatar, class: "img-profile rounded-circle w-100" %>
+          <% else %>
+            <%= image_tag ActionController::Base.helpers.asset_path("default.png") , class: "img-profile rounded-circle w-100" %>
+          <% end %>
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">
+        <div class="dropdown-menu dropdown-menu-user" aria-labelledby="navbarDropdown">
+          <%= link_to "#", class: "dropdown-item" do %>
             <i class="fa fa-external-link fa-sm fa-fw mr-2 text-black-400"></i>
             <%= t "header.Admin_panel" %>
-          </a>
-          <a class="dropdown-item" href="#">
+          <% end %>
+          <%= link_to user_path(current_user), class: "dropdown-item" do %>
             <i class="fa fa-user fa-sm fa-fw mr-2 text-black-400"></i>
             <%= t "header.Profile" %>
-          </a>
-          <a class="dropdown-item" href="#">
+          <% end %>
+          <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
             <i class="fa fa-sign-out fa-sm fa-fw mr-2 text-black-400"></i>
-            <%= t "header.Sign_out" %>
-          </a>
+            <%= t("header.Sign_out") %>
+          <% end %>
         </div>
       </li>
     </ul>
