@@ -18,4 +18,7 @@ Rails.application.routes.draw do
     get "index"
   end
   root to: "home#index"
+
+  get "follow/:follow_user_id", to: "users#follow", as: "follow_path"
+  get "unfollow/:unfollow_user_id", to: "users#unfollow", as: "unfollow_path"
 end

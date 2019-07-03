@@ -26,6 +26,7 @@ en:
     Activities: "Activities"
     Word_List: "Word list"
     Start_Lesson: "Start Lesson"
+    Suggest_users: "Suggest users"
   header:
     title: "Home"
     Search: "Search"
@@ -70,3 +71,5 @@ en:
     user_profile: "User profile"
     profile: "Profile"
     recent_activity: "Recent Activity"
+    Follow: "Follow"
+    Unfollow: "Unfollow"

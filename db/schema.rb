@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2019_07_03_062544) do
     t.index ["user_id"], name: "index_courses_on_user_id"
   end
 
-  create_table "follwers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "followers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "followed_id"
     t.datetime "created_at", null: false
