@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     delete "signout", to: "devise/sessions#destroy"
   end
 
+  resources :users, only: %i(show)
+
   namespace :admin do
     get "index"
   end

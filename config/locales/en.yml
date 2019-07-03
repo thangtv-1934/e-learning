@@ -7,6 +7,7 @@ en:
   signup: "Sign up"
   edit: "Edit"
   errors: "errors"
+  follow: "Follow"
   modal_logout:
     Logout: "Logout"
     Ready_to_leave: "Ready to Leave?"
@@ -62,3 +63,10 @@ en:
     confirm_your_change: "(we need your current password to confirm your changes)"
     leave_blank_noti: "(leave blank if you don't want to change it)"
     characters_minimum: "characters minimum"
+    current_password: "Current password"
+    edit_avatar: "Edit avatar"
+    name: "Name"
+    email: "Email"
+    user_profile: "User profile"
+    profile: "Profile"
+    recent_activity: "Recent Activity"
