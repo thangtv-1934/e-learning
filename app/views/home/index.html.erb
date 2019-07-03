@@ -6,43 +6,60 @@
       <div class="word-memmories"><%= t "home_page.Words_memorised" %>: 184</div>
       <div class="list-follower">
         <h4 class="title text-black my-2"><%= t "home_page.Follower" %></h4>
-        <div class="d-inline-block user-follow-item">
-          <div class="d-flex">
-            <span class="avatar">
-              <img class="rounded-circle mx-2" src="https://via.placeholder.com/20x20">
-            </span>
-            <span class="name">name</span>
-          </div>
-        </div>
-        <div class="d-inline-block user-follow-item">
-          <div class="d-flex">
-            <span class="avatar">
-              <img class="rounded-circle mx-2" src="https://via.placeholder.com/20x20">
-            </span>
-            <span class="name">name</span>
-          </div>
-        </div>
+        <% if @supports.user_followers %>
+          <% @supports.user_followers.each do |follower| %>
+            <div class="d-inline-block user-follow-item">
+              <div class="d-flex">
+                <span class="avatar">
+                  <img class="rounded-circle mx-2" src="https://via.placeholder.com/20x20">
+                </span>
+                <span class="name"><%= follower.name %></span>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
       </div>
       <div class="list-followed">
         <h4 class="title text-black my-2"><%= t "home_page.Followed" %></h4>
-        <div class="d-inline-block user-follow-item">
-          <div class="d-flex">
-            <span class="avatar">
-              <img class="rounded-circle mx-2" src="https://via.placeholder.com/20x20">
-            </span>
-            <span class="name">name</span>
+        <% if @supports.user_followed %>
+          <% @supports.user_followed.each do |followed| %>
+          <div class="d-inline-block user-follow-item">
+            <div class="d-flex">
+              <span class="avatar">
+                <img class="rounded-circle mx-2" src="https://via.placeholder.com/20x20">
+              </span>
+              <span class="name"><%= followed.name %></span>
+            </div>
           </div>
-        </div>
-        <div class="d-inline-block user-follow-item">
-          <div class="d-flex">
-            <span class="avatar">
-              <img class="rounded-circle mx-2" src="https://via.placeholder.com/20x20">
-            </span>
-            <span class="name">name</span>
-          </div>
-        </div>
+          <% end %>
+        <% end %>
       </div>
       <h2 class="p-2 my-2 bg-primary text-white summary-title rounded"><%= t"home_page.Activities" %></h2>
+      <div class="acvities-wrap"></div>
+      <h2 class="p-2 my-2 bg-primary text-white summary-title rounded"><%= t"home_page.Suggest_users" %></h2>
+      <div class="suggest-user-wrap py-2">
+        <% if(@supports.users_high_score) %>
+          <% @supports.users_high_score.each do |user| %>
+            <% if user.id != current_user.id %>
+              <div class="row suggest-user-item py-1">
+                <div class="col-1">
+                  <img src="https://via.placeholder.com/30x30" class="rounded-circle">
+                </div>
+                <div class="col-8">
+                  <span class="user-name"><%= user.name %></span>
+                </div>
+                <div class="col-3">
+                  <% if current_user.following? current_user.id, user.id  %>
+                    <%= link_to t("user.Follow"), follow_path_url(user.id), class: "btn btn-primary w-100 follow-btn" %>
+                  <% else %>
+                    <%= link_to t("user.Unfollow"), unfollow_path_url(user.id), class: "btn btn-primary w-100  unfollow-btn" %>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
     </div>
     <div class="col-12 col-sm-12 col-md-8 list-courses">
       <div class="row">
