@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_02_022440) do
+ActiveRecord::Schema.define(version: 2019_07_02_083408) do
 
-  create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "content"
     t.bigint "question_id"
     t.datetime "created_at", null: false
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_07_02_022440) do
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
-  create_table "courses", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "courses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "image"
     t.text "description"
@@ -30,14 +30,14 @@ ActiveRecord::Schema.define(version: 2019_07_02_022440) do
     t.index ["user_id"], name: "index_courses_on_user_id"
   end
 
-  create_table "follwers", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "follwers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "followed_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "learnings", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "learnings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "word_id"
     t.datetime "created_at", null: false
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2019_07_02_022440) do
     t.index ["word_id"], name: "index_learnings_on_word_id"
   end
 
-  create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "question"
     t.integer "correct_answer"
     t.bigint "word_id"
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2019_07_02_022440) do
     t.index ["word_id"], name: "index_questions_on_word_id"
   end
 
-  create_table "results", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "results", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "grade"
     t.string "answers"
     t.bigint "user_id"
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 2019_07_02_022440) do
     t.index ["user_id"], name: "index_results_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -77,11 +77,13 @@ ActiveRecord::Schema.define(version: 2019_07_02_022440) do
     t.string "name"
     t.string "avatar"
     t.boolean "is_admin", default: false
+    t.string "provider"
+    t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "words", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "words", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "meaning"
     t.string "speech"

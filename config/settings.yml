@@ -1,0 +1,6 @@
+user:
+  min_password_length: 0
+  max_password_length: 20
+omniauth:
+  facebook: "facebook"
+  google_oauth2: "google_oauth2"
