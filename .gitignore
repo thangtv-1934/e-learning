@@ -29,6 +29,7 @@ config/storage.yml
 log/*
 public/uploads/*
 .byebug_history
+/storage/
 
 ## Specific to RubyMotion (use of CocoaPods):
 #

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: "home#index"
+
   devise_for :users,
     controllers:{omniauth_callbacks: "users/omniauth_callbacks"}
 
@@ -16,8 +18,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get "index"
+    resources :courses, except: :show
   end
-  root to: "home#index"
 
   get "follow/:follow_user_id", to: "users#follow", as: "follow_path"
   get "unfollow/:unfollow_user_id", to: "users#unfollow", as: "unfollow_path"

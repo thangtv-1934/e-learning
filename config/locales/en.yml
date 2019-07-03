@@ -8,6 +8,10 @@ en:
   edit: "Edit"
   errors: "errors"
   follow: "Follow"
+  submit: "Submit"
+  reset: "Reset"
+  courses: "Courses"
+  dashboard: "Dashboard"
   modal_logout:
     Logout: "Logout"
     Ready_to_leave: "Ready to Leave?"
@@ -73,3 +77,27 @@ en:
     recent_activity: "Recent Activity"
     Follow: "Follow"
     Unfollow: "Unfollow"
+  course:
+    list: "List Courses"
+    create_course: "Create new Course"
+    edit_course: "Edit Course"
+    enter_name: "Enter course's name"
+    stt: "STT"
+    name: "Name"
+    description: "Description"
+    image: "Image"
+    action: "Action"
+    create_success: "Create course success"
+    edit_success: "Edit course success"
+    destroy_success: "Destroy course success"
+    destroy_fail: "Destroy course fail"
+    notfound: "Coures not found"
+  activerecord:
+    errors:
+      models:
+        course:
+          attributes:
+            name:
+              blank: "Can't blank"
+            description:
+              blank: "Can't blank"

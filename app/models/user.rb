@@ -6,6 +6,8 @@ class User < ApplicationRecord
     :recoverable, :rememberable, :validatable,
     :omniauthable, omniauth_providers: OMNIAUTH_PROVIDERS.map(&:to_sym)
 
+  before_create :add_default_avatar, only: %i(create update)
+
   has_many :courses, dependent: :destroy
   has_many :learnings, dependent: :destroy
   has_many :results, dependent: :destroy
@@ -52,5 +54,13 @@ class User < ApplicationRecord
 
   def unfollow other_user
     following.delete other_user
+  end
+
+  private
+
+  def add_default_avatar
+    unless avatar.attached?
+      self.avatar.attach(io: File.open(Rails.root.join("app", "assets", "images", "default.png")), filename: "default.png" , content_type: "image/png")
+    end
   end
 end
