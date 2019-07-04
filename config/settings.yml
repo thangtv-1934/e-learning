@@ -8,3 +8,5 @@ user:
 omniauth:
   facebook: "facebook"
   google_oauth2: "google_oauth2"
+course:
+  course_per_page: 20

@@ -17,6 +17,9 @@
       <div id="content-wrapper" class="d-flex flex-column">
         <div id="content">
           <%= render "layouts/admin_navbar" %>
+            <% flash.each do |message_type, message| %>
+              <div class="alert alert-<%= message_type %>"><%= message %></div>
+            <% end %>
             <div class="container-fluid">
               <%= yield %>
             </div>
@@ -36,7 +39,9 @@
         <div class="modal-body"><%= t "modal_logout.Select_logout_below" %></div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal"><%= t "modal_logout.Cancel" %></button>
-          <a class="btn btn-primary" href="login.html"><%= t "modal_logout.Logout" %></a>
+          <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
+            <%= t "modal_logout.Logout" %>
+          <% end %>
         </div>
       </div>
     </div>

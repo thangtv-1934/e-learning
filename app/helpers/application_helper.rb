@@ -7,4 +7,9 @@ module ApplicationHelper
       page_title + " | " + base_title
     end
   end
+
+  def get_stt page, per_page
+    return 1 if page == 0
+    (page - 1) * per_page + 1
+  end
 end
