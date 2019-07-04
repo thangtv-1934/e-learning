@@ -39,4 +39,10 @@
           <label><%= t "word.Manage_words" %></label>
         <% end %>
       </li>
+      <li class="nav-item">
+        <%= link_to admin_questions_path, class: "nav-link" do %>
+          <i class="fa fa-fw fa-question-circle"></i>
+          <label><%= t "question.Manage_questions" %></label>
+        <% end %>
+      </li>
     </ul>

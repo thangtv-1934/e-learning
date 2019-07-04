@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     resources :courses, except: :show
     resources :users
     resources :words
+    resources :questions
   end
 
   get "follow/:follow_user_id", to: "users#follow", as: "follow"

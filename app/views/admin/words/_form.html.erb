@@ -14,7 +14,7 @@
   <%= f.text_area :example, class: "form-control" %>
 
   <%= f.label :course_id %>
-    <%= f.select :course_id, options_for_select(convert_courses, selected: @word.course_id), {}, class: "form-control" %>
+  <%= f.select :course_id, options_for_select(convert_courses, selected: @word.course_id), {}, class: "form-control" %>
 
   <%= f.submit yield(:button_text), class: "btn btn-primary my-2" %>
 <% end %>
