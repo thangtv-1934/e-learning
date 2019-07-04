@@ -1,0 +1,36 @@
+<%= provide :title, t("word.learn") %>
+<div class="card shadow mb-4 col-lg-6 col-md-6 col-sm-12 mt-5 m-auto">
+  <div class="card-header py-3">
+    <hr class="invisible">
+    <h6 class="m-0 font-weight-bold text-primary"><%= t "word.learn" %></h6>
+  </div>
+  <% unless @words.empty? %>
+    <% @words.each do |word| %>
+      <div class="card-body text-gray-900">
+        <div class="box-part text-center">
+          <i class="fa fa-credit-card fa-5x" aria-hidden="true"></i>
+          <div class="title">
+            <h1><b><%= word.name %></b></h1>
+          </div>
+          <div class="text">
+            <label><b><%= word.name %></b></label>
+            <label>(<%= word.speech %>): </label>
+            <label><%= word.meaning %></label>
+          </div>
+          <div class="text">
+            <%= t "word.example" %>: <span><%= word.example %></span>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <%= paginate @words, left: 1, right:  1%>
+    <hr class="invisible">
+    <% if params[:page].to_i == @words.total_count %>
+      <%= link_to t("home_page.Start_Lesson"), "/", class: "btn btn-outline-success my-2 my-sm-0" %>
+    <% end %>
+  <% else %>
+    <div class="text m-auto">
+      <%= t "word.empty" %>
+    </div>
+  <% end %>
+</div>

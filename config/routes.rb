@@ -24,4 +24,5 @@ Rails.application.routes.draw do
 
   get "follow/:follow_user_id", to: "users#follow", as: "follow_path"
   get "unfollow/:unfollow_user_id", to: "users#unfollow", as: "unfollow_path"
+  get "course/:course_id/words", to: "words#index", as: "learn_words"
 end

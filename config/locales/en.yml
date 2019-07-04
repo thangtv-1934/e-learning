@@ -106,6 +106,10 @@ en:
     destroy_success: "Destroy course success"
     destroy_fail: "Destroy course fail"
     notfound: "Coures not found"
+  word:
+    learn: "Learn"
+    example: "Example"
+    empty: "Empty words"
   activerecord:
     errors:
       models:

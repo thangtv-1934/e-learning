@@ -10,3 +10,5 @@ omniauth:
   google_oauth2: "google_oauth2"
 course:
   course_per_page: 20
+word:
+  word_per_page: 1

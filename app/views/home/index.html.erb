@@ -63,17 +63,19 @@
     </div>
     <div class="col-12 col-sm-12 col-md-8 list-courses">
       <div class="row">
-        <div class="card col-12 col-sm-6 col-md-4 py-2">
-          <img class="card-img-top w-100" src="https://via.placeholder.com/100x100">
-          <div class="card-body p-0">
-            <h5 class="card-title mt-2">Courses</h5>
-            <p class="card-text">Description</p>
-            <div class="d-flex">
-              <%= link_to t("home_page.Word_List"), "/", class: "btn btn-success mx-1 w-50" %>
-              <%= link_to t("home_page.Start_Lesson"), "/", class: "btn btn-success mx-1 w-50" %>
+        <% @supports.list_courses.each do |course| %>
+          <div class="card col-12 col-sm-6 col-md-4 py-2">
+            <%= image_tag course.image, class: "card-img-top w-100" %>
+            <div class="card-body p-0">
+              <h5 class="card-title mt-2"><%= course.name %></h5>
+              <p class="card-text"><%= course.description %></p>
+              <div class="d-flex">
+                <%= link_to t("home_page.Word_List"), learn_words_path(course.id), class: "btn btn-success mx-1 w-50" %>
+                <%= link_to t("home_page.Start_Lesson"), "/", class: "btn btn-success mx-1 w-50" %>
+              </div>
             </div>
           </div>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>
