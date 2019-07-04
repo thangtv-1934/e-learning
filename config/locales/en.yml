@@ -12,6 +12,9 @@ en:
   reset: "Reset"
   courses: "Courses"
   dashboard: "Dashboard"
+  users: "Users"
+  admin: "Admin"
+  member: "Member"
   modal_logout:
     Logout: "Logout"
     Ready_to_leave: "Ready to Leave?"
@@ -77,6 +80,17 @@ en:
     recent_activity: "Recent Activity"
     Follow: "Follow"
     Unfollow: "Unfollow"
+    list: "List users"
+    create: "Create user"
+    edit: "Edit user"
+    stt: "STT"
+    avatar: "Avatar"
+    role: "role"
+    action: "Action"
+    create_success: "Create user success"
+    edit_success: "Edit user success"
+    edit_fail: "Edit user fail"
+    destroy_success: "Destroy user success"
   course:
     list: "List Courses"
     create_course: "Create new Course"
@@ -98,6 +112,10 @@ en:
         course:
           attributes:
             name:
-              blank: "Can't blank"
+              blank: "can't blank"
             description:
-              blank: "Can't blank"
+              blank: "can't blank"
+        user:
+          attributes:
+            password:
+              blank: "can't blank"

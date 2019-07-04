@@ -28,29 +28,37 @@ body .sidebar .nav-item .nav-link[data-toggle=collapse]:after {
 
 .pagination {
   border-left: 1px solid #ddd;
-  .first{
-    padding : 0;
+
+  .first {
+    padding: 0;
     float: none;
     border: none;
   }
+
   .prev {
-    padding : 0;
+    padding: 0;
     float: none;
     border: none;
   }
-  .page{
-    padding : 0;
+
+  .page {
+    padding: 0;
     float: none;
     border: none;
   }
-  .next{
-    padding : 0;
+
+  .next {
+    padding: 0;
     float: none;
     border: none;
   }
-  .last{
-    padding : 0;
+
+  .last {
+    padding: 0;
     float: none;
     border: none;
   }
+}
+.stt {
+  width: 5%;
 }

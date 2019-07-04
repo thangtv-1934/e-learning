@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   OMNIAUTH_PROVIDERS = %W(#{Settings.omniauth.facebook}
   #{Settings.omniauth.google_oauth2}).freeze
+  USER_PARAMS = %i(name email password avatar).freeze
 
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable,
@@ -54,6 +55,10 @@ class User < ApplicationRecord
 
   def unfollow other_user
     following.delete other_user
+  end
+
+  def current_user? user
+    self == user
   end
 
   private

@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   namespace :admin do
     get "index"
     resources :courses, except: :show
+    resources :users
   end
 
   get "follow/:follow_user_id", to: "users#follow", as: "follow_path"
