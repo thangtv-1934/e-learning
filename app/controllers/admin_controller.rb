@@ -2,7 +2,9 @@ class AdminController < ApplicationController
   before_action :authenticate_user!
   before_action :admin_user
 
-  def index; end
+  def index
+    redirect_to admin_courses_path
+  end
 
   private
 

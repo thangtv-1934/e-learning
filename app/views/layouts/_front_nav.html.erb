@@ -17,9 +17,11 @@
           <%= image_tag current_user.avatar, class: "img-profile rounded-circle w-100" %>
         </a>
         <div class="dropdown-menu dropdown-menu-user" aria-labelledby="navbarDropdown">
-          <%= link_to admin_index_path, class: "dropdown-item" do %>
-            <i class="fa fa-external-link fa-sm fa-fw mr-2 text-black-400"></i>
-            <%= t "header.Admin_panel" %>
+          <% if current_user.is_admin? %>
+            <%= link_to admin_index_path, class: "dropdown-item" do %>
+              <i class="fa fa-external-link fa-sm fa-fw mr-2 text-black-400"></i>
+              <%= t "header.Admin_panel" %>
+            <% end %>
           <% end %>
           <%= link_to user_path(current_user), class: "dropdown-item" do %>
             <i class="fa fa-user fa-sm fa-fw mr-2 text-black-400"></i>

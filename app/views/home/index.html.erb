@@ -36,30 +36,6 @@
       </div>
       <h2 class="p-2 my-2 bg-primary text-white summary-title rounded"><%= t"home_page.Activities" %></h2>
       <div class="acvities-wrap"></div>
-      <h2 class="p-2 my-2 bg-primary text-white summary-title rounded"><%= t"home_page.Suggest_users" %></h2>
-      <div class="suggest-user-wrap py-2">
-        <% if(@supports.users_high_score) %>
-          <% @supports.users_high_score.each do |user| %>
-            <% if user.id != current_user.id %>
-              <div class="row suggest-user-item py-1">
-                <div class="col-1">
-                  <img src="https://via.placeholder.com/30x30" class="rounded-circle">
-                </div>
-                <div class="col-8">
-                  <span class="user-name"><%= user.name %></span>
-                </div>
-                <div class="col-3">
-                  <% if current_user.following? current_user.id, user.id  %>
-                    <%= link_to t("user.Follow"), follow_path_url(user.id), class: "btn btn-primary w-100 follow-btn" %>
-                  <% else %>
-                    <%= link_to t("user.Unfollow"), unfollow_path_url(user.id), class: "btn btn-primary w-100  unfollow-btn" %>
-                  <% end %>
-                </div>
-              </div>
-            <% end %>
-          <% end %>
-        <% end %>
-      </div>
     </div>
     <div class="col-12 col-sm-12 col-md-8 list-courses">
       <div class="row">
@@ -71,7 +47,8 @@
               <p class="card-text"><%= course.description %></p>
               <div class="d-flex">
                 <%= link_to t("home_page.Word_List"), learn_words_path(course.id), class: "btn btn-success mx-1 w-50" %>
-                <%= link_to t("home_page.Start_Lesson"), "/", class: "btn btn-success mx-1 w-50" %>
+                <%= link_to t("home_page.Start_Lesson"), do_lesson_path(course.id), class: "btn btn-success mx-1 w-50",
+                  data:{ confirm: t("lesson.confirm_lesson")}%>
               </div>
             </div>
           </div>

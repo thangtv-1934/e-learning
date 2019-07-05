@@ -15,6 +15,12 @@ en:
   users: "Users"
   admin: "Admin"
   member: "Member"
+  finish: "Finish"
+  ready_to_do_lesson: "Ready to do lesson"
+  success: "Success"
+  complete_lesson: "Complete Lesson"
+  confirm_complete: "You definitely want to submit a lesson"
+  score: "Score: "
   modal_logout:
     Logout: "Logout"
     Ready_to_leave: "Ready to Leave?"
@@ -106,19 +112,11 @@ en:
     destroy_success: "Destroy course success"
     destroy_fail: "Destroy course fail"
     notfound: "Coures not found"
-  activerecord:
-    errors:
-      models:
-        course:
-          attributes:
-            name:
-              blank: "can't blank"
-            description:
-              blank: "can't blank"
-        user:
-          attributes:
-            password:
-              blank: "can't blank"
+  lesson:
+    do_lesson: "Do lesson"
+    confirm_lesson: "You have 10 minutes to do lesson. Choose confirm button to do!"
+    view_result: "View result"
+    correct_answer: "Correct Answer:"
   word:
     learn: "Learn"
     example: "Example"
@@ -152,3 +150,13 @@ en:
               blank: "Meaning field must be not empty"
             example:
               blank: "Example field must be not empty"
+        course:
+          attributes:
+            name:
+              blank: "can't blank"
+            description:
+              blank: "can't blank"
+          user:
+            attributes:
+              password:
+                blank: "can't blank"
