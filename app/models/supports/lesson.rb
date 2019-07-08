@@ -14,17 +14,17 @@ class Supports::Lesson
     ResultService.new(@user, @course).get_time
   end
 
-  def grade
+  def grade result_id
     words = Course.find_by(id: @course.id).words
     return if words.empty?
-    Result.where(user_id: @user.id, course_id: @course.id).order_by_column(created_at: :desc).first.grade
+    Result.where(user_id: @user.id, course_id: @course.id, id: result_id).order_by_column(created_at: :desc).first.grade
   end
 
-  def get_result
+  def get_result result_id
     words = Course.find_by(id: @course.id).words
     return if words.empty?
     question_list = Question.in_words(words).includes :answers
-    result = Result.where(user_id: @user.id, course_id: @course.id).order_by_column(created_at: :desc).first
+    result = Result.where(user_id: @user.id, course_id: @course.id, id: result_id).order_by_column(created_at: :desc).first
     answers = ActiveSupport::JSON.decode result.answers
     answers.each do |key, value|
       question_list.each do |value_ques|

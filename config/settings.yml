@@ -21,3 +21,5 @@ time:
   time_do_lesson: 600
 lesson:
   submited: 1
+date:
+  format: "%Y-%m-%d"
