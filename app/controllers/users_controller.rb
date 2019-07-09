@@ -3,7 +3,8 @@ class UsersController < ApplicationController
   before_action :find_user
 
   def show
-    @activities = Result.where(user_id: @user.id).includes(:course)
+    @activities = Result.where(user_id: @user.id).includes(:course).page(params[:page])
+      .per(Settings.result.result_per_page).order_by_column created_at: :desc
   end
 
   def follow

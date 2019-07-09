@@ -22,6 +22,8 @@ en:
   confirm_complete: "You definitely want to submit a lesson"
   score: "Score: "
   date: "Date"
+  result_for: "Result for:"
+  search_course: "Search Courses"
   modal_logout:
     Logout: "Logout"
     Ready_to_leave: "Ready to Leave?"
