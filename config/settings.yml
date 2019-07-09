@@ -12,3 +12,6 @@ course:
   course_per_page: 20
 word:
   word_per_page: 1
+words:
+  word_per_page: 10
+  max_length: 60

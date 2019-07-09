@@ -33,4 +33,10 @@
           <label><%= t"courses" %></label>
         <% end %>
       </li>
+      <li class="nav-item">
+        <%= link_to admin_words_path, class: "nav-link" do %>
+          <i class="fa fa-fw fa-file-word-o"></i>
+          <span><%= t "word.Manage_words" %></span>
+        <% end %>
+      </li>
     </ul>

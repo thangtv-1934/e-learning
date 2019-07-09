@@ -106,10 +106,6 @@ en:
     destroy_success: "Destroy course success"
     destroy_fail: "Destroy course fail"
     notfound: "Coures not found"
-  word:
-    learn: "Learn"
-    example: "Example"
-    empty: "Empty words"
   activerecord:
     errors:
       models:
@@ -123,3 +119,36 @@ en:
           attributes:
             password:
               blank: "can't blank"
+  word:
+    learn: "Learn"
+    example: "Example"
+    empty: "Empty words"
+    courses: "Courses"
+    name: "Name"
+    action: "Action"
+    list_words: "List words"
+    are_you_sure: "Are you sure ?"
+    Create_new_word: "Create new word"
+    Edit: "Edit"
+    Add: "Add"
+    Edit_word: "Edit word"
+    Add_word: "Add word"
+    create_success: "Create word successfull!"
+    update_success: "Update word successfull!"
+    delete_success: "Delete word successfull!"
+    delete_failed: "Delete word failed!"
+    Manage_words: "Manage words"
+  error: "errors"
+  activerecord:
+    errors:
+      models:
+        word:
+          attributes:
+            name:
+              blank: "Name field must be not empty"
+            speech:
+              blank: "Speech field must be not empty"
+            meaning:
+              blank: "Meaning field must be not empty"
+            example:
+              blank: "Example field must be not empty"

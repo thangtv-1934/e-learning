@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     get "index"
     resources :courses, except: :show
     resources :users
+    resources :words
   end
 
   get "follow/:follow_user_id", to: "users#follow", as: "follow_path"
