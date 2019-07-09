@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :users, only: %i(show)
 
   namespace :admin do
-    get "index"
+    get "index", to: "courses#index"
     resources :courses, except: :show
     resources :users
     resources :words
@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get "course/:course_id/words", to: "words#index", as: "learn_words"
   get "course/:course_id/do-lesson", to: "lessons#do_lesson", as: "do_lesson"
   get "course/:course_id/:result_id/view-result", to: "lessons#view_result", as: "view_result"
+  get "word-learned", to: "words#view_word", as: "view_word"
 
   post "lesson/submit-answer", to: "lessons#submit_answer", as: "submit_answer"
 end

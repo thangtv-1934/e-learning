@@ -23,3 +23,4 @@ lesson:
   submited: 1
 date:
   format: "%Y-%m-%d"
+zero_records: 0

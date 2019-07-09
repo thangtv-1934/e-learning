@@ -11,4 +11,8 @@ class WordsController < ApplicationController
       render file: "#{Rails.root}/public/404", status: :not_found
     end
   end
+
+  def view_word
+    @learnings = current_user.learnings.includes(:word).page(params[:page]).per Settings.word.word_per_page
+  end
 end

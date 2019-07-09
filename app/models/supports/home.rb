@@ -23,4 +23,8 @@ class Supports::Home
   def list_courses
     Course.page(@page).per(Settings.course.course_per_page).order_by_column :created_at
   end
+
+  def count_word_learned
+    @user.learnings.size
+  end
 end
