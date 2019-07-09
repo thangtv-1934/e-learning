@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_user
+  before_action :find_user, only: %i(show)
 
   def show
     @activities = Result.where(user_id: @user.id).includes(:course).page(params[:page])
@@ -10,13 +10,13 @@ class UsersController < ApplicationController
   def follow
     @user = User.find params[:follow_user_id]
     current_user.follow @user
-    redirect_to root_path
+    redirect_to request.referer
   end
 
   def unfollow
     @user = User.find params[:unfollow_user_id]
     current_user.unfollow @user
-    redirect_to root_path
+    redirect_to request.referer
   end
 
   private
