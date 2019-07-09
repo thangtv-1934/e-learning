@@ -32,7 +32,7 @@ $(document).ready(function() {
       success: data => {
         if (data.value === "Success") {
           $('#confirmSumit').modal('hide');
-          window.location.href = 'http://' + window.location.hostname + ':3000' + '/course/' + data.data.course_id + '/view-result'
+          window.location.href = 'http://' + window.location.hostname + ':3000' + '/course/' + data.data.course_id + '/' + data.data.result_id  + '/view-result'
         }
       }
     })

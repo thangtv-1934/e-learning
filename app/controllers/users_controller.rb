@@ -2,7 +2,9 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :find_user
 
-  def show; end
+  def show
+    @activities = Result.where(user_id: @user.id).includes(:course)
+  end
 
   def follow
     @user = User.find params[:follow_user_id]

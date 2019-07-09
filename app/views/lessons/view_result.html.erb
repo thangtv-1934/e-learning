@@ -4,13 +4,13 @@
     <hr class="invisible">
     <h6 class="m-auto font-weight-bold text-primary"><%= @course.name %></h6>
     <br>
-    <h5><b><%= t "score" %> <%= @result.grade %></b></h5>
+    <h5><b><%= t "score" %> <%= @result.grade params[:result_id] %></b></h5>
   </div>
-  <% unless @result.get_result.nil? %>
+  <% unless @result.get_result(params[:result_id]).nil? %>
     <div class="card-body text-gray-900">
       <div class="box-part text-left">
         <% stt = 0 %>
-        <% @result.get_result.each do |key, result| %>
+        <% @result.get_result(params[:result_id]).each do |key, result| %>
           <div class="question" data-question-id="<%= %>">
             <h5><b>
               <%= stt += 1 %>. <%= result["question"] %>
