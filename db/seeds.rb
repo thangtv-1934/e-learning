@@ -47,59 +47,59 @@ Answer.create!(question_id: 1,
 Question.create!(word_id: 1,
                  question: "What is the plural form a knife?",
                  correct_answer:5)
-Answer.create!(question_id: 1,
+Answer.create!(question_id: 2,
                content: "Knifes")
-Answer.create!(question_id: 1,
+Answer.create!(question_id: 2,
                content: "Knives")
-Answer.create!(question_id: 1,
+Answer.create!(question_id: 2,
                content: "Nifes")
-Answer.create!(question_id: 1,
+Answer.create!(question_id: 2,
                content: "Nives")
 
 Question.create!(word_id: 1,
                  question: "What is the plural form a knife?",
                  correct_answer: 9)
-Answer.create!(question_id: 2,
+Answer.create!(question_id: 3,
                content: "Knifes")
-Answer.create!(question_id: 2,
+Answer.create!(question_id: 3,
                content: "Knives")
-Answer.create!(question_id: 2,
+Answer.create!(question_id: 3,
                content: "Nifes")
-Answer.create!(question_id: 2,
+Answer.create!(question_id: 3,
                content: "Nives")
 
 Question.create!(word_id: 1,
                  question: "What is the plural form a knife?",
                  correct_answer: 13)
-Answer.create!(question_id: 3,
+Answer.create!(question_id: 4,
                content: "Knifes")
-Answer.create!(question_id: 3,
+Answer.create!(question_id: 4,
                content: "Knives")
-Answer.create!(question_id: 3,
+Answer.create!(question_id: 4,
                content: "Nifes")
-Answer.create!(question_id: 3,
+Answer.create!(question_id: 4,
                content: "Nives")
 
 Question.create!(word_id: 1,
                  question: "What is the plural form a knife?",
                  correct_answer: 17)
-Answer.create!(question_id: 4,
+Answer.create!(question_id: 5,
                content: "Knifes")
-Answer.create!(question_id: 4,
+Answer.create!(question_id: 5,
                content: "Knives")
-Answer.create!(question_id: 4,
+Answer.create!(question_id: 5,
                content: "Nifes")
-Answer.create!(question_id: 4,
+Answer.create!(question_id: 5,
                content: "Nives")
 
 Question.create!(word_id: 1,
                  question: "What is the plural form a knife?",
-                 correct_answer: 20)
-Answer.create!(question_id: 5,
+                 correct_answer: 21)
+Answer.create!(question_id: 6,
                content: "Knifes")
-Answer.create!(question_id: 5,
+Answer.create!(question_id: 6,
                content: "Knives")
-Answer.create!(question_id: 5,
+Answer.create!(question_id: 6,
                content: "Nifes")
-Answer.create!(question_id: 5,
+Answer.create!(question_id: 6,
                content: "Nives")

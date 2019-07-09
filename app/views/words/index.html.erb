@@ -26,7 +26,8 @@
     <%= paginate @words, left: 1, right:  1%>
     <hr class="invisible">
     <% if params[:page].to_i == @words.total_count %>
-      <%= link_to t("home_page.Start_Lesson"), "/", class: "btn btn-outline-success my-2 my-sm-0" %>
+      <%= link_to t("home_page.Start_Lesson"), do_lesson_path(params[:course_id]), class: "btn btn-outline-success my-2 my-sm-0",
+        data:{ confirm: t("lesson.confirm_lesson")}%>
     <% end %>
   <% else %>
     <div class="text m-auto">

@@ -15,3 +15,9 @@ word:
 words:
   word_per_page: 10
   max_length: 60
+question:
+  questions_number: 20
+time:
+  time_do_lesson: 600
+lesson:
+  submited: 1

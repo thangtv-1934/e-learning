@@ -77,8 +77,9 @@ ActiveRecord::Schema.define(version: 2019_07_03_062544) do
   end
 
   create_table "results", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "grade"
-    t.string "answers"
+    t.float "grade", default: 0.0
+    t.integer "status", default: 0
+    t.text "answers"
     t.bigint "user_id"
     t.bigint "course_id"
     t.datetime "created_at", null: false
