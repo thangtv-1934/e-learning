@@ -25,6 +25,7 @@ class Supports::Lesson
     return if words.empty?
     question_list = Question.in_words(words).includes :answers
     result = Result.where(user_id: @user.id, course_id: @course.id, id: result_id).order_by_column(created_at: :desc).first
+    return if result.answers.nil?
     answers = ActiveSupport::JSON.decode result.answers
     answers.each do |key, value|
       question_list.each do |value_ques|

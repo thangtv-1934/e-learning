@@ -24,3 +24,5 @@ lesson:
 date:
   format: "%Y-%m-%d"
 zero_records: 0
+result:
+  result_per_page: 10

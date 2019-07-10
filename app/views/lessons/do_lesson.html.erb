@@ -5,7 +5,7 @@
     <h6 class="m-auto font-weight-bold text-primary"><%= @course.name %></h6>
   </div>
   <%= csrf_meta_tags %>
-  <% unless @lesson.question_list.nil? %>
+  <% unless @lesson.question_list.blank? %>
     <div class="countdown"></div>
     <div class="card-body text-gray-900">
       <div class="box-part text-left">
@@ -28,7 +28,7 @@
         <% end %>
       </div>
     </div>
-    <a class="btn btn-outline-success mb-5 m-auto dropdown-item w-auto" href="#"
+    <a class="btn btn-outline-success mb-5 m-auto w-auto" href="#"
       data-toggle="modal" data-target="#confirmSumit">
       <%= t "finish" %>
     </a>
