@@ -6,6 +6,7 @@ $(document).ready(function() {
     }
     data.course_id = document.getElementById("course_id").value
     var listQuestion = document.getElementsByClassName("question")
+    var user_id = document.getElementById("user_id").value
     for (var i = 0; i < listQuestion.length; i++) {
       var questionId = listQuestion[i].dataset.questionId
       const answerChoose = document.querySelector('input[name="'+ "answer" + questionId +'"]:checked')
@@ -32,7 +33,7 @@ $(document).ready(function() {
       success: data => {
         if (data.value === "Success") {
           $('#confirmSumit').modal('hide');
-          window.location.href = 'http://' + window.location.hostname + ':3000' + '/course/' + data.data.course_id + '/' + data.data.result_id  + '/view-result'
+          window.location.href = 'http://' + window.location.hostname + ':3000' + '/course/' + user_id + '/' + data.data.course_id + '/' + data.data.result_id  + '/view-result'
         }
       }
     })

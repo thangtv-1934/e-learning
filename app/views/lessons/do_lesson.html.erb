@@ -11,6 +11,7 @@
       <div class="box-part text-left">
         <%= hidden_field_tag :course_id, @course.id %>
         <%= hidden_field_tag :time, @lesson.time %>
+        <%= hidden_field_tag :user_id, current_user.id %>
         <% stt = 0 %>
         <% @lesson.question_list.each do |question| %>
           <div class="question" data-question-id="<%= question.id %>">

@@ -22,6 +22,10 @@
         <%= image_tag current_user.avatar, class: "img-profile rounded-circle w-100" %>
       </a>
       <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+        <%= link_to root_path, class: "dropdown-item" do %>
+          <i class="fa fa-home fa-sm fa-fw mr-2 text-black-400"></i>
+          <%= t "home_page.title" %>
+        <% end %>
         <%= link_to user_path(current_user), class: "dropdown-item" do %>
           <i class="fa fa-user fa-sm fa-fw mr-2 text-black-400"></i>
           <%= t "header.Profile" %>

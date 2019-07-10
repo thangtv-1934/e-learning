@@ -43,7 +43,7 @@ class Admin::UsersController < AdminController
   private
 
   def user_params
-    params.require(:course).permit User::USER_PARAMS
+    params.require(:user).permit User::USER_PARAMS
   end
 
   def find_user

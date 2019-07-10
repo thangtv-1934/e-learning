@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   get "unfollow/:unfollow_user_id", to: "users#unfollow", as: "unfollow"
   get "course/:course_id/words", to: "words#index", as: "learn_words"
   get "course/:course_id/do-lesson", to: "lessons#do_lesson", as: "do_lesson"
-  get "course/:course_id/:result_id/view-result", to: "lessons#view_result", as: "view_result"
+  get "course/:user_id/:course_id/:result_id/view-result", to: "lessons#view_result", as: "view_result"
   get "word-learned", to: "words#view_word", as: "view_word"
   get "/search", to:"courses#search"
 

@@ -59,7 +59,11 @@
                 <% @activities.each do |ac| %>
                   <tr>
                     <td>
-                      <%= link_to view_result_path(ac.course_id, ac.id) do%>
+                      <% if current_user.current_user? @user %>
+                        <%= link_to view_result_path(params[:id], ac.course_id, ac.id) do%>
+                          <%= ac.course_name %>
+                        <% end %>
+                      <% else %>
                         <%= ac.course_name %>
                       <% end %>
                     </td>

@@ -1,4 +1,4 @@
-<%= form_for [:admin, @user], as: :course, class: "user" do |f| %>
+<%= form_for [:admin, @user], as: :user, class: "user" do |f| %>
   <%= render "shared/error_messages", object: f.object %>
   <div class="form-group">
     <%= f.text_field :name, autofocus: true, class: "form-control form-control-user",

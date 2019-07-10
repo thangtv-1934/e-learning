@@ -2,6 +2,7 @@ class LessonsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_course, only: %i(do_lesson view_result)
   before_action :find_result, only: :view_result
+  before_action :find_user, only: :view_result
 
   def do_lesson
     @lesson = Supports::Lesson.new current_user, @course
@@ -26,7 +27,7 @@ class LessonsController < ApplicationController
   end
 
   def view_result
-    @result = Supports::Lesson.new current_user, @course
+    @result = Supports::Lesson.new @user, @course
   end
 
   private
@@ -40,6 +41,12 @@ class LessonsController < ApplicationController
   def find_result
     @res = Result.find_by id: params[:result_id]
     return if @res
+    render file: "#{Rails.root}/public/404", status: :not_found
+  end
+
+  def find_user
+    @user = User.find_by id: params[:user_id]
+    return if @user
     render file: "#{Rails.root}/public/404", status: :not_found
   end
 end
