@@ -3,9 +3,17 @@
   <div class="row">
     <div class="col-12 col-sm-12 col-md-4 user-summary">
       <h2 class="p-2 mb-2 bg-primary text-white summary-title rounded"><%= t"home_page.Summary" %></h2>
-      <div class="word-memmories"><%= t "home_page.Words_memorised" %>: 184</div>
+      <div class="word-memmories"><%= t "home_page.Words_memorised" %>:
+        <% if @supports.count_word_learned == Settings.zero_records %>
+          <%= @supports.count_word_learned %>
+        <% else %>
+          <%= link_to view_word_path do %>
+            <%= @supports.count_word_learned %>
+          <% end %>
+        <% end %>
+      </div>
       <div class="list-follower">
-        <h4 class="title text-black my-2"><%= t "home_page.Follower" %></h4>
+        <h4 class="title text-black my-2"><%= t "home_page.Follower" %>(<%= @supports.user_followers.size %>): </h4>
         <% if @supports.user_followers %>
           <% @supports.user_followers.each do |follower| %>
             <div class="d-inline-block user-follow-item">
@@ -20,7 +28,7 @@
         <% end %>
       </div>
       <div class="list-followed">
-        <h4 class="title text-black my-2"><%= t "home_page.Followed" %></h4>
+        <h4 class="title text-black my-2"><%= t "home_page.Followed" %>(<%= @supports.user_followed.size %>): </h4>
         <% if @supports.user_followed %>
           <% @supports.user_followed.each do |followed| %>
           <div class="d-inline-block user-follow-item">
