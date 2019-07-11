@@ -140,6 +140,7 @@ en:
     delete_failed: "Delete word failed!"
     Manage_words: "Manage words"
     learned: "Word learned"
+    user_learned: "User learned"
   error: "errors"
   activerecord:
     errors:
