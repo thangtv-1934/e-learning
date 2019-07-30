@@ -16,3 +16,15 @@ jQuery(document).on ('click', '.add_fields', function(){
   jQuery(this).before($(this).data('fields')).toString().replace(regexp, time);
   return false;
 });
+
+function add_fields(link, association, content) {
+  let new_id = new Date().getTime();
+  let regexp = new RegExp('new_' + association, 'g');
+  $(link).before(content.replace(regexp, new_id));
+  return false;
+}
+
+function removeField(link) {
+  $(link).parent().prev().find('input[type=hidden]').val('1');
+  $(link).closest(".fields").fadeOut();
+}

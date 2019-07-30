@@ -8,45 +8,24 @@ class Admin::QuestionsController < AdminController
 
   def create
     @question = Question.new questions_params
-    Question.transaction do
-      @question.save
-      Answer.transaction do
-        params[:question][:answers_attributes].each do |answer|
-          new_ans = Answer.new content: answer[1][:content], question_id: @question.id
-          new_ans.save
-        end
-        redirect_to edit_admin_question_path(@question)
-      end
-      rescue
-        flash[:danger] = t "question.create_failed"
-        render :new
-    end
-    rescue
-      flash[:danger] = t "answer.create_failed"
+    if @question.save
+      redirect_to admin_questions_path
+    else
+      flash[:danger] = t "question.create_failed"
       render :new
+    end
   end
 
   def new
     @question = Question.new
-    Settings.questions.number_answer.times {@question.answers.build}
   end
 
-  def edit
-    (Settings.questions.number_answer - @question.answers.size.to_i).times {@question.answers.build}
-  end
+  def edit; end
 
   def update
     if @question.update questions_params
       flash[:success] = t "question.update_success"
-      count = 0
-      answers = @question.answers
-      answers.each do |answer|
-        answer.content = params[:question][:answers_attributes][count.to_s][:content]
-        answer.save
-        count += 1
-        break if count == answers.size
-      end
-      redirect_to edit_admin_question_path(@question)
+      redirect_to admin_questions_path
     else
       render :edit
     end
